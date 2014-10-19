@@ -1,0 +1,11 @@
+{
+  "name": "storedCollection",
+  "version": "0.0.1",
+  "description": "objects collection stored on disk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Denys Khanzhyiev",
+  "license": "MIT"
+}
