@@ -1,5 +1,5 @@
 {
-  "name": "storedCollection",
+  "name": "storedcollection",
   "version": "0.0.1",
   "description": "objects collection stored on disk",
   "main": "index.js",

@@ -52,7 +52,7 @@ Collection.prototype.set = function(id,obj){
 Collection.prototype.add = Collection.prototype.set;
 
 Collection.prototype.get = function(id){
-    return this.item[id];
+    return this.items[id];
 }
 
 Collection.prototype.update = function(id,obj){
@@ -66,6 +66,12 @@ Collection.prototype.update = function(id,obj){
     Object.keys(obj).forEach(function(key){
         target[key] = obj[key];
     });
+    if(this.saveImmidiate) this.saveSync();
+}
+
+Collection.prototype.delete = function(id){
+    if(!id) throw new Error('Object id needed');
+    delete this.items[id];
     if(this.saveImmidiate) this.saveSync();
 }
 
