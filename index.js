@@ -7,7 +7,8 @@
  */
 var
     path = require('path'),
-    fs = require('fs');
+    fs = require('fs')
+    mkdirp = require('mkdirp');
 
 
 function Collection(options){
@@ -30,6 +31,10 @@ Collection.prototype.loadSync = function(){
 }
 
 Collection.prototype.saveSync = function(){
+    if(!this.dirChecked){
+        mkdirp.sync(path.dirname(this.fileName));
+        this.dirChecked = true;
+    }
     fs.writeFileSync(this.fileName,JSON.stringify(this.items));
 }
 
